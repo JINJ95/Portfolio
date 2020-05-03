@@ -1,0 +1,27 @@
+.flex {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.canvas {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.height-fix {
+    height: 100vh;
+    padding: 0 10px;
+}
+
+body{
+    font-family: "Domine", serif;
+}
+
+.titleText {
+    font-size: xx-large;
+}

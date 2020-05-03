@@ -5,67 +5,150 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jordan Johnson</title>
+  <link rel="shortcut icon" type="image/png" href="./assets/Pictures/alien.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-  <style>
-    body {
-      background-color: gainsboro;
-    }
-
-  </style>
 </head>
 
 <body>
-
+  <section class="height-fix">
+    <div class="canvas">
+      <canvas></canvas>
+    </div>
+    <div class="flex height-fix">
+      <div class="titleText text-secondary">Jordan Johnson</div>
+      <div class="titleText text-secondary">Full-Stack Web Developer</div>
+      <br>
+      <button type="button" class="btn btn-outline-secondary">View My Work!</button>
+    </div>
+  </section>
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light pt-0 pb-0">
-    <h2 class="navbar-text text-white bg-info mb-0 px-3">
-      Jordan Johnson
-    </h2>
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link active text-secondary border-right" href="./index.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-secondary border-right" href="./portfolio.html">Portfolio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-secondary border-right" href="./contact.html">Contact</a>
-      </li>
-    </ul>
-  </nav>
+  <ul class="nav justify-content-center text-secondary">
+    <li class="nav-item">
+      <a class="nav-link active text-secondary" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" href="#">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" href="#">Projects</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" href="#">Contact</a>
+    </li>
+  </ul>
+  <br>
 
   <!-- About Me -->
-  <div class="container border bg-white mt-4">
+  <div class="container border bg-white my-4">
     <div class="row">
-      <div class="col-4 text-info ">
-        <h2 class="border-bottom py-4">About Me</h2>
+      <div class="col-12 text-info ">
+        <h2 class="border-bottom py-4 text-secondary">About Me</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-4">
-        <img class="img img-thumbnail float-left" src="./Pictures/me.jpg">
-      </div>
       <div class="col-8 text-center bigText">
         <br><br>
-        <p>Strong work ethic, fast learner, enjoys going above and beyond. Fascinated about creating meaningful software that improves the quality of life. Certified University of Utah full stack web developer enthusiastic about UX, UI, mobile responsiveness and back-end development. Skills in HTML, CSS, JavaScript, ES6, React, Node.js, Java, and more.</p>
+        <p>Strong work ethic, fast learner, enjoys going above and beyond. Full stack web developer
+          enthusiastic about UX, UI, mobile responsiveness and back-end development. Skills in HTML, CSS,
+          JavaScript, ES6, React, Node.js, Java, Express.js and more.</p>
+        </div>
+      <div class="col-4 justify-content-center">
+        <img class="img img-thumbnail float-left justify-content-center" src="./assets/Pictures/me.jpg">
       </div>
     </div>
   </div>
   <br>
 
-    <!-- Footer -->
-  <div class="container-fluid fixed-bottom">
+  <!-- Portfolio Container -->
+  <div class="container border bg-white mt-4 px-4">
+    <!-- Header of Container -->
     <div class="row">
-      <div class="col-12 py-1 bg-info" style="margin-bottom:0">
+      <div class="col-12">
+        <h2 class="border-bottom py-3 text-secondary">Portfolio Projects</h2>
+      </div>
+    </div>
+    <br>
+    <!-- First row of projects -->
+    <div class="row">
+      <div class="col-6">
+        <p>strtUp is a browser dashboard! Click to check it out!</p><a href="https://github.com/JINJ95/strtUP"
+          target="_blank">
+          <img src="./assets/Pictures/strtup.png" alt="strtup" style="width:100%"></a>
+        <br>
+      </div>
+      <div class="col-6">
+        <!-- <img src="./Pictures/johannes-plenio-DKix6Un55mw-unsplash.jpg" alt="Boat in Water" style="width:100%"> -->
+        <br>
+      </div>
+    </div>
+    <br>
+    <!-- Second row of projects -->
+    <div class="row">
+      <div class="col-6">
+        <!-- <img src="./Pictures/johannes-plenio-DKix6Un55mw-unsplash.jpg" alt="Boat in Water" style="width:100%"> -->
+        <br>
+      </div>
+      <div class="col-6">
+        <!-- <img src="./Pictures/johannes-plenio-DKix6Un55mw-unsplash.jpg" alt="Boat in Water" style="width:100%"> -->
+        <br>
+      </div>
+    </div>
+    <br>
+    <!-- Third Row of Projects -->
+    <div class="row">
+      <div class="col-6">
+        <!-- <img src="./Pictures/johannes-plenio-DKix6Un55mw-unsplash.jpg" alt="Boat in Water" style="width:100%"> -->
+        <br>
+      </div>
+      <div class="col-6">
+      </div>
+    </div>
+    <br>
+  </div>
+  <br>
+
+  <!-- Contact Form -->
+  <div class="container border bg-white mt-4">
+    <div class="row">
+      <div class="col-lg-4 text-info ">
+        <h2 class="border-bottom py-4 text-secondary">Contact</h2>
+      </div>
+    </div>
+    <br>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="name" class="form-control" id="exampleInputName" placeholder="John Smith">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail" placeholder="example@gmail.com">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Message</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+      </div>
+      <button type="button submit" class="btn btn-outline-secondary">Submit!</button>
+    </form>
+    <br>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 py-1 bg-light" style="margin-bottom:0">
       </div>
     </div>
     <div class="row">
-      <div class="col-12 py-2 bg-secondary text-center" style="margin-bottom:0">
-        <span class="text-white-50 font-weight-lighter">Copyright</span>
+      <div class="col-12 py-2 text-secondary text-center" style="margin-bottom:0">
+        <span class="text-secondary">Copyright</span>
       </div>
     </div>
   </div>
+  <script src="./index.js"></script>
 </body>
+
 </html>
