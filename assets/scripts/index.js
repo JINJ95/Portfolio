@@ -21,10 +21,10 @@ function randomColor(colors) {
 }
 
 // Event Listeners
-addEventListener('mousemove', (event) => {
-    mouse.x = event.clientX
-    mouse.y = event.clientY
-})
+// addEventListener('mousemove', (event) => {
+//     mouse.x = event.clientX
+//     mouse.y = event.clientY
+// })
 
 addEventListener('resize', () => {
     canvas.width = innerWidth
@@ -42,7 +42,7 @@ class Particle {
         this.color = color
         this.radians = Math.random() * Math.PI * 2;
         this.velocity = 0.02;
-        this.distanceFromCenter = randomIntFromRange(100, 500);
+        this.distanceFromCenter = randomIntFromRange(250, 1000);
         this.lastMouse = { x: x, y: y };
         this.update = () => {
             const lastPoint = { x: this.x, y: this.y };
