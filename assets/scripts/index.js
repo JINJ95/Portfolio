@@ -1,3 +1,4 @@
+//import utils from './utils'
 
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
@@ -5,26 +6,9 @@ const c = canvas.getContext('2d')
 canvas.width = innerWidth
 canvas.height = innerHeight
 
-const mouse = {
-    x: innerWidth / 2,
-    y: innerHeight / 2
-}
-
-const colors = ['#CFF1EF', '#323EDD', '#BEEBE9', '#81F5FF']
-// Utility Functions
-function randomIntFromRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function randomColor(colors) {
-    return colors[Math.floor(Math.random() * colors.length)];
-}
+const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66']
 
 // Event Listeners
-// addEventListener('mousemove', (event) => {
-//     mouse.x = event.clientX
-//     mouse.y = event.clientY
-// })
 
 addEventListener('resize', () => {
     canvas.width = innerWidth
@@ -34,65 +18,99 @@ addEventListener('resize', () => {
 })
 
 // Objects
-class Particle {
+class Star {
     constructor(x, y, radius, color) {
         this.x = x
         this.y = y
         this.radius = radius
         this.color = color
+        this.velocity = {
+            x: (Math.random() - 2) * 0.000025,
+            y: (Math.random() - 2) * 0.000025,
+        }
         this.radians = Math.random() * Math.PI * 2;
-        this.velocity = 0.02;
-        this.distanceFromCenter = randomIntFromRange(250, 1000);
-        this.lastMouse = { x: x, y: y };
-        this.update = () => {
-            const lastPoint = { x: this.x, y: this.y };
-            //move points over time
-            this.radians += this.velocity;
+    }
 
-            //Drag effect
-            this.lastMouse.x += (mouse.x - this.lastMouse.x) * 0.05;
-            this.lastMouse.y += (mouse.y - this.lastMouse.y) * 0.05;
+    draw() {
+        c.beginPath()
+        c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+        c.fillStyle = this.color
+        c.shadowColor = '#E3EAEF'
+        c.shadowBlur = 20
+        c.fill()
+        c.closePath()
+    }
 
-            // Circular Motion
-            this.x = this.lastMouse.x + Math.cos(this.radians) * this.distanceFromCenter;
-            this.y = this.lastMouse.y + Math.sin(this.radians) * this.distanceFromCenter;
-            this.draw(lastPoint);
-        }
+    update() {
+        this.draw()
 
-        this.draw = lastPoint => {
-            c.beginPath()
-            c.strokeStyle = this.color;
-            c.lineWidth = this.radius;
-            c.moveTo(lastPoint.x, lastPoint.y);
-            c.lineTo(this.x, this.y);
-            c.stroke();
-            c.closePath()
-        }
+
+        //When ball hits bottom of screen
+        // if(this.y - this.radius > canvas.height) {
+        // this.y += Math.random() * canvas.height
+        // this.x += Math.random() * canvas.width
+        //   this.radius = Math.random(10) * 10;
+        // }
+
+        //circular motion
+
+        this.y += this.velocity.y + Math.sin(this.radians);
+        this.x += this.velocity.x + Math.cos(this.radians);
+
     }
 }
-// Implementation
-let particles = [];
-let objects
-function init() {
-    objects = []
 
-    for (let i = 0; i < 300; i++) {
-        const radius = (Math.random() * 2) + 1;
-        particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius, randomColor(colors)));
+// Implementation
+const backgroundGradient = c.createLinearGradient(0, 0, 0, canvas.height)
+backgroundGradient.addColorStop(0, '#171e26')
+backgroundGradient.addColorStop(1, '#3f586b')
+let ticker = 0;
+let stars
+let backgroundStars
+let randomSpawnRate = 75
+
+function init() {
+    stars = []
+    backgroundStars = []
+
+    // for (let i = 0; i < 1; i++) {
+    //   stars.push(new Star(canvas.width / 2, canvas.height / 2, 10, 'white'));
+    // }
+
+    for (let i = 0; i < 200; i++) {
+        const x = Math.random() * canvas.width
+        const y = Math.random() * canvas.height
+        const radius = Math.random() * 3
+        backgroundStars.push(new Star(x, y, radius, 'white'))
+
     }
-    console.log(particles);
 }
 
 // Animation Loop
 function animate() {
     requestAnimationFrame(animate)
-    c.fillStyle = 'rgba(255, 255, 255, 0.05)';
+    c.fillStyle = backgroundGradient
     c.fillRect(0, 0, canvas.width, canvas.height)
 
-    //c.fillText('HTML CANVAS BOILERPLATE', mouse.x, mouse.y)
-    particles.forEach(particle => {
-        particle.update()
+
+    stars.forEach(Star => {
+        Star.update()
     })
+
+    backgroundStars.forEach(backgroundStar => {
+        backgroundStar.draw();
+    })
+
+    ticker++
+
+    if (ticker % randomSpawnRate == 0) {
+        const y = Math.random() * canvas.height
+        const x = Math.random() * canvas.width
+        const radius = Math.random() * 3
+        stars.push(new Star(x, y, radius, 'white'))
+        randomSpawnRate = utils.randomIntFromRange(75, 300)
+    }
+
 }
 
 init()
