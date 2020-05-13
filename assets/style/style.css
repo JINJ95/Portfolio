@@ -22,8 +22,30 @@
 
 body{
     font-family: "Domine", serif;
+    background: #171e26;
 }
 
 .titleText {
     font-size: xx-large;
+}
+
+.nameText {
+    font-size: 75px;
+}
+
+.fullStackText {
+    font-size: 25px;
+}
+
+.container {
+    background: #171e26;
+}
+
+.button {
+    color: rgb(89,98,105);
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    color: white !important;
 }
