@@ -1,4 +1,4 @@
-//import utils from './utils'
+//import utils from './utils.js'
 
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
@@ -86,6 +86,10 @@ function init() {
     }
 }
 
+function randomIntFromRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 // Animation Loop
 function animate() {
     requestAnimationFrame(animate)
@@ -108,7 +112,7 @@ function animate() {
         const x = Math.random() * canvas.width
         const radius = Math.random() * 3
         stars.push(new Star(x, y, radius, 'white'))
-        randomSpawnRate = utils.randomIntFromRange(75, 300)
+        randomSpawnRate = randomIntFromRange(75, 300)
     }
 
 }

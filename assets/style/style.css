@@ -12,7 +12,7 @@
     top: 0;
     width: 100vw;
     z-index: -1;
-    background: black
+    /* background: black */
 }
 
 .height-fix {
@@ -20,9 +20,23 @@
     padding: 0 10px;
 }
 
-body{
+@media only screen and (max-width: 600px) {
+body {
+    font-size: 8pt;
+    text-align: center;
+    position: relative;
     font-family: "Domine", serif;
-    background: #171e26;
+}
+}
+.canvasText {
+    color: #E3EAEF;
+    
+}
+
+body{
+    position: relative;
+    font-family: "Domine", serif;
+    /* background: #171e26; */
 }
 
 .titleText {
@@ -37,9 +51,12 @@ body{
     font-size: 25px;
 }
 
+
 .container {
-    background: #171e26;
+    width: 100%;
+    /* background: #171e26; */
 }
+
 
 .button {
     color: rgb(89,98,105);
@@ -47,5 +64,95 @@ body{
 }
 
 .button:hover {
-    color: white !important;
+    /* color: white !important; */
 }
+
+@media only screen and (max-width: 600px) {
+.col-6{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+}
+@media only screen and (max-width: 880px) {
+.col-4{
+    flex: 100% 100% 100%;
+    max-width: 100%;
+
+}
+}
+
+@media only screen and (max-width: 575px) {
+div.cardStyle {
+        width: 5.5rem;
+    }
+}
+@media only screen and (min-width: 575px) {
+div.cardStyle {
+        width: 9rem;
+        height: 7rem;
+    }
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none !important;
+    border-radius: .25rem;
+}
+
+p.card-text{
+    justify-content: center;
+}
+
+/* .cardStyle {
+    width: 10rem;
+} */
+/* about */
+div.gallery {
+    /* border: 1px solid #ccc; */
+}
+div.gallery:hover {
+    /* border: 1px solid #777; */
+}
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+* {
+    box-sizing: border-box;
+}
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* nav */
