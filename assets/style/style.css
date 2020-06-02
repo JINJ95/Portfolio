@@ -57,6 +57,10 @@ body{
     /* background: #171e26; */
 }
 
+.btn-primary {
+    background-color: #3f586b;
+}
+
 
 .button {
     color: rgb(89,98,105);
@@ -64,7 +68,7 @@ body{
 }
 
 .button:hover {
-    /* color: white !important; */
+    color: white !important;
 }
 
 @media only screen and (max-width: 600px) {
