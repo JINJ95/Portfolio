@@ -49,6 +49,9 @@
       </ul>
     </div>
   </nav>
+  <br id="about">
+  <br>
+  <br>
   <br>
 
   <!-- About Me -->
@@ -97,7 +100,7 @@
 
 
   <!-- About Me with pic -->
-  <section id="about">
+  <section id="">
     <div class="container">
       <div class="row">
         <div class="col-sm d-flex justify-content-sm-center">
@@ -114,7 +117,7 @@
       <div class="col">
         <div class="card-body">
           <h5 class="card-title">I'm Jordan Johnson</h5>
-          <p class="card-text">a software engineer currently working as a project manager. I have a strong work ethic
+          <p class="card-text">Software engineer currently working as a project manager. I have a strong work ethic
             and
             I am fascinated about creating meaningful software
             that improves our quality of life. Connect with me if you are interested in working together!</p>
@@ -123,11 +126,15 @@
       </div>
     </div>
   </div>
-
-
+  <br>
+  <br>
+  <br>
+  <br id="projects">
+  <br>
+  <br>
 
   <!-- Projects Container -->
-  <section id="projects">
+  <section id="">
     <div class="container my-5 px-4">
       <!-- Header of Container -->
       <div class="row">
@@ -142,34 +149,41 @@
           <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs justify-content-center">
               <li class="nav-item">
-                <a class="nav-link" href="#">All</a>
+                <a class="nav-link" data-toggle="collapse" href=".multi-collapse" aria-expanded="false"
+                  aria-controls="All">All</a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="#">React</a>
-              </li> -->
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">JavaScript</a>
-              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#MySQL" aria-expanded="false"
+                  aria-controls="MySQL">MySQL</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#JavaScript" aria-expanded="false"
+                  aria-controls="JavaScript">JavaScript</a>
+              </li>
             </ul>
           </div>
           <div class="row">
             <div class="col-6">
-              <div class="card">
+              <div class="card collapse multi-collapse" id="JavaScript">
                 <img class="card-img-top" src="./assets/Pictures/strtup.png" alt="strtUP">
                 <div class="card-body">
                   <h5 class="card-title">StrtUp</h5>
                   <p class="card-text">A customizable Browser Dashboard.</p>
-                  <a href="https://github.com/JINJ95/strtUP" target="_blank" class="btn btn-primary">Website</a>
+                  <a href="https://github.com/JINJ95/strtUP" target="_blank" class="btn btn-primary">GitHub</a>
+                  <a href="https://brentp24.github.io/strtUP/" target="_blank" class="btn btn-primary">Website</a>
                 </div>
               </div>
             </div>
             <div class="col-6">
-              <div class="card">
-                <img class="card-img-top" src="./assets/Pictures/weatherDashboard.png" alt="Weather-Dashboard">
+              <div class="card collapse multi-collapse" id="MySQL">
+                <iframe src="https://media.giphy.com/media/JobYVCvspvhqbhz0j2/giphy.gif" width="360" height="315"
+                  frameBorder="0" class="card-img-top"></iframe>
                 <div class="card-body">
-                  <h5 class="card-title">Weather Dashboard</h5>
-                  <p class="card-text">Check the current weather & forecast for specific cities.</p>
-                  <a href="https://github.com/JINJ95/Weather-Dashboard" target="_blank"
+                  <h5 class="card-title">CarFacts</h5>
+                  <p class="card-text">CarFacts is your all-in-one app to track all maintenance and modifications done
+                    to your vehicle.</p>
+                  <a href="https://github.com/JINJ95/carFacts" target="_blank" class="btn btn-primary">GitHub</a>
+                  <a href="https://floating-stream-06188.herokuapp.com/" target="_blank"
                     class="btn btn-primary">Website</a>
                 </div>
               </div>
@@ -177,57 +191,85 @@
           </div>
           <div class="row">
             <div class="col-6">
-              <div class="card">
-                <img class="card-img-top" src="./assets/Pictures/workDayScheduler.png" alt="Work-Day-Scheduler">
+              <div class="card collapse multi-collapse" id="JavaScript">
+                <img class="card-img-top" src="./assets/Pictures/NewWorkDayScheduler.png" alt="Work-Day-Scheduler">
                 <div class="card-body">
                   <h5 class="card-title">Work Day Scheduler</h5>
                   <p class="card-text">An interactive day planner.</p>
                   <a href="https://github.com/JINJ95/Work-Day-Scheduler" target="_blank"
-                    class="btn btn-primary">Website</a>
+                    class="btn btn-primary">GitHub</a>
                 </div>
               </div>
             </div>
             <div class="col-6">
-              <div class="card">
-                <img class="card-img-top" src="./assets/Pictures/passwordGenerator.jpg" alt="strtUP">
+              <div class="card collapse multi-collapse" id="JavaScript">
+                <img class="card-img-top" src="./assets/Pictures/NewPasswordGenerator.png" alt="strtUP">
                 <div class="card-body">
                   <h5 class="card-title">Password Generator</h5>
-                  <p class="card-text">Generates a password unique to the users requests.</p>
+                  <p class="card-text">Generates a unique password.</p>
                   <a href="https://github.com/JINJ95/Password-Generator" target="_blank"
-                    class="btn btn-primary">Website</a>
+                    class="btn btn-primary">GitHub</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-6">
-              <div class="card">
+              <div class="card collapse multi-collapse" id="JavaScript">
                 <img class="card-img-top" src="http://g.recordit.co/62neacOYWI.gif" alt="ReadMe-Generator">
                 <div class="card-body">
                   <h5 class="card-title">README.md Generator</h5>
-                  <p class="card-text">Create an organized and personalized README for your projects.</p>
+                  <p class="card-text">Create an organized and personalized README.</p>
                   <a href="https://github.com/JINJ95/ReadMe-Generator" target="_blank"
-                    class="btn btn-primary">Website</a>
+                    class="btn btn-primary">GitHub</a>
                 </div>
               </div>
             </div>
             <div class="col-6">
-              <div class="card">
+              <div class="card collapse multi-collapse" id="JavaScript">
                 <img class="card-img-top" src="http://g.recordit.co/aAryVPTCr0.gif" alt="Team-Summary">
                 <div class="card-body">
                   <h5 class="card-title">Team Summary</h5>
-                  <p class="card-text">Prompts the user for information about team members and generates a html page to
-                    display them.</p>
-                  <a href="https://github.com/JINJ95/Team-Summary" target="_blank" class="btn btn-primary">Website</a>
+                  <p class="card-text">Prompts the user for information about team members and generates a html page.
+                  </p>
+                  <a href="https://github.com/JINJ95/Team-Summary" target="_blank" class="btn btn-primary">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="card collapse multi-collapse" id="JavaScript">
+                <img class="card-img-top" src="./assets/Pictures/NewWeatherDashboard.png" alt="Weather-Dashboard">
+                <div class="card-body">
+                  <h5 class="card-title">Weather Dashboard</h5>
+                  <p class="card-text">Check the current weather & forecast forcities.</p>
+                  <a href="https://github.com/JINJ95/Weather-Dashboard" target="_blank"
+                    class="btn btn-primary">GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card collapse multi-collapse" id="MySQL">
+                <iframe src="http://g.recordit.co/6lfwdhmZio.gif" width="360" height="362"
+                  class="card-img-top"></iframe>
+                <div class="card-body">
+                  <h5 class="card-title">Employee-Tracker</h5>
+                  <p class="card-text">Solution for managing a company's employees.</p>
+                  <a href="https://github.com/JINJ95/Employee-Tracker" target="_blank" class="btn btn-primary">GitHub</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
   </section>
+  <br id="contact">
+  <br>
+  <br>
+  <br>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-sm d-flex justify-content-sm-center">
@@ -263,6 +305,34 @@
   <br>
   <br>
 
+  <!-- Resume -->
+  <section id="resume">
+    <div class="container my-5 px-4">
+      <!-- Header of Container -->
+      <div class="row">
+        <div class="col-sm d-flex justify-content-sm-center">
+          <h2 class="py-3 text-secondary justify-content-center">Resume</h2>
+        </div>
+      </div>
+      <p class="col-sm d-flex justify-content-sm-center">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+          aria-expanded="false" aria-controls="collapseExample">
+          Click Here!
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <iframe src="./assets/Pictures/Jordan Johnson Resume 2020.pdf" width="100%" height="800" style="border:none;">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+
   <!-- Footer -->
   <div class="container-fluid">
     <div class="row">
@@ -273,20 +343,24 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col d-flex justify-content-center">
-          <a target="_blank" href="https://github.com/JINJ95" class="badge mx-5 badge-secondary">Github</a>
-          <a target="_blank" href="https://www.linkedin.com/in/jordan-johnson-ba745719b/" class="badge mx-5 badge-secondary">LinkedIn</a>
-          <a href="#" class="badge mx-5 badge-secondary">Resume</a>
+          <h2><a target="_blank" href="https://github.com/JINJ95" class="badge mx-5 badge-secondary"><i
+                class="fab fa-github"></i></a></h2>
+          <h2><a target="_blank" href="https://www.linkedin.com/in/jordan-johnson-ba745719b/"
+              class="badge mx-5 badge-secondary"><i class="fab fa-linkedin"></i></a></h2>
+          <h2><a href="https://www.facebook.com/jordanijohnson95/" class="badge mx-5 badge-secondary"><i
+                class="fab fa-facebook"></i></a></h2>
         </div>
       </div>
     </div>
     <br>
     <div class="row">
-      <div class="col-12 py-2 text-secondary text-center" style="margin-bottom:0">
-        <span class="text-secondary">Copyright 2020</span>
-      </div>
+      <!-- <div class="col-12 py-2 text-secondary text-center" style="margin-bottom:0">
+        <span class="text-secondary"><i class="far fa-copyright"></i> 2020</span>
+      </div> -->
     </div>
   </div>
   <script src="./assets/scripts/index.js"></script>
+  <script src="https://kit.fontawesome.com/c90739eabf.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
